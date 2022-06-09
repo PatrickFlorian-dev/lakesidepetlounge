@@ -35,12 +35,12 @@ import { AddClientComponent } from './add-client/add-client.component';
     NbIconModule,
     ngFormsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [
     AdminPagesComponent,
     HomepageComponent,
-    AddClientComponent
+    AddClientComponent,
   ],
 })
 export class AdminPagesModule { }

@@ -46,8 +46,8 @@ import {
   bootstrap: [AppComponent],
   exports: [
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
 export class AppModule {
 }
