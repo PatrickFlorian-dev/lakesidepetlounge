@@ -1,1 +1,68 @@
-<h1>Homepage Works!</h1>
+<div class="row">
+    <div class="col-lg-12">
+
+        <nb-card>
+            <nb-card-header><i class="fa-solid fa-user"></i> Client Actions</nb-card-header>
+            <nb-card-body>
+                <div class="buttons-row">
+                    <button nbButton [status]="'primary'" hero routerLink="/pages/admin/add-client">
+                        <i class="fa-solid fa-user-plus"></i> &nbsp; Add a client
+                    </button>
+                    <button nbButton [status]="'warning'" hero>
+                        <i class="fa-solid fa-user-gear"></i> &nbsp; Modify a client
+                    </button>
+                    <button nbButton [status]="'danger'" hero>
+                        <i class="fa-solid fa-user-slash"></i> &nbsp; Disable / Enable a client
+                    </button>
+                </div>
+            </nb-card-body>
+        </nb-card>
+
+        <nb-card>
+            <nb-card-header><i class="fa-solid fa-paw"></i> Pet Actions</nb-card-header>
+            <nb-card-body>
+                <div class="buttons-row">
+                    <button nbButton [status]="'primary'" hero>
+                        <i class="fa-solid fa-user-plus"></i> &nbsp; Add a pet(s)
+                    </button>
+                    <button nbButton [status]="'warning'" hero>
+                        <i class="fa-solid fa-user-gear"></i> &nbsp; Modify a pet(s)
+                    </button>
+                    <button nbButton [status]="'danger'" hero>
+                        <i class="fa-solid fa-user-slash"></i> &nbsp; Remove a pet(s)
+                    </button>
+                </div>
+            </nb-card-body>
+        </nb-card>
+
+        <nb-card>
+            <nb-card-header><i class="fa-solid fa-calendar-days"></i> Calendar Event Actions</nb-card-header>
+            <nb-card-body>
+                <div class="buttons-row">
+                    <button nbButton [status]="'primary'" hero>
+                        <i class="fa-solid fa-user-plus"></i> &nbsp; Add an event
+                    </button>
+                    <button nbButton [status]="'warning'" hero>
+                        <i class="fa-solid fa-user-gear"></i> &nbsp; Modify an event
+                    </button>
+                    <button nbButton [status]="'danger'" hero>
+                        <i class="fa-solid fa-user-slash"></i> &nbsp; Remove an event
+                    </button>
+                </div>
+            </nb-card-body>
+        </nb-card>
+
+        <nb-card>
+            <nb-card-header><i class="fa-solid fa-file-signature"></i> Agreement Actions</nb-card-header>
+            <nb-card-body>
+                <div class="buttons-row">
+                    <button nbButton [status]="'primary'" hero>
+                        <i class="fa-solid fa-user-plus"></i> &nbsp; Sign an agreement(s)
+                    </button>
+                </div>
+            </nb-card-body>
+        </nb-card>
+
+    </div>
+  </div>
+  

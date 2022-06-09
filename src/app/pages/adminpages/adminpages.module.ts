@@ -16,6 +16,8 @@ import { AdminPagesRoutingModule } from './adminpages-routing.module';
 import { AdminPagesComponent } from './adminpages.component';
 import { FormsModule as ngFormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddClientComponent } from './add-client/add-client.component';
 
 @NgModule({
   imports: [
@@ -32,10 +34,13 @@ import { HomepageComponent } from './homepage/homepage.component';
     NbSelectModule,
     NbIconModule,
     ngFormsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AdminPagesComponent,
-    HomepageComponent
+    HomepageComponent,
+    AddClientComponent
   ],
 })
 export class AdminPagesModule { }

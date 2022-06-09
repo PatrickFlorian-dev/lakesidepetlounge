@@ -1,0 +1,127 @@
+<div class="row">
+    <div class="col-md-12">
+
+      <nb-card>
+        <nb-card-header><i class="fa-solid fa-user-plus"></i> Add a client</nb-card-header>
+        <nb-card-body>
+          <form [formGroup]="addClientForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group row">
+                <label for="firstName" class="label col-sm-3 col-form-label">First Name</label>
+                <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth id="firstName" placeholder="First Name" formControlName="firstName">
+                    <div class="validation-error" 
+                    *ngIf="addClientForm.get('firstName').invalid && (addClientForm.get('firstName').dirty || addClientForm.get('firstName').touched)">
+                    First name is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="lastName" class="label col-sm-3 col-form-label">Last Name</label>
+                <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth id="lastName" placeholder="Last Name" formControlName="lastName">
+                    <div class="validation-error" 
+                    *ngIf="addClientForm.get('lastName').invalid && (addClientForm.get('lastName').dirty || addClientForm.get('lastName').touched)">
+                    Last name is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="email" class="label col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="email" nbInput fullWidth id="email" placeholder="Email" formControlName="email">
+                    <div class="validation-error" 
+                    *ngIf="addClientForm.get('email').invalid && (addClientForm.get('email').dirty || addClientForm.get('email').touched)">
+                    Email is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="phone" class="label col-sm-3 col-form-label">Phone</label>
+                <div class="col-sm-9">
+                    <input type="phone" nbInput fullWidth id="phone" placeholder="Phone" formControlName="phone">
+                    <div class="validation-error" 
+                    *ngIf="addClientForm.get('phone').invalid && (addClientForm.get('phone').dirty || addClientForm.get('phone').touched)">
+                    Phone is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="address" class="label col-sm-3 col-form-label">Address</label>
+                <div class="col-sm-9">
+                    <input type="address" nbInput fullWidth id="address" placeholder="address" formControlName="address">
+                    <div class="validation-error" 
+                    *ngIf="addClientForm.get('address').invalid && (addClientForm.get('address').dirty || addClientForm.get('address').touched)">
+                    Address is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="address2" class="label col-sm-3 col-form-label">Address 2</label>
+                <div class="col-sm-9">
+                    <input type="address2" nbInput fullWidth id="address2" placeholder="address2" formControlName="address2">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="city" class="label col-sm-3 col-form-label">City</label>
+                <div class="col-sm-9">
+                    <input type="city" nbInput fullWidth id="city" placeholder="city" formControlName="city">
+                    <div class="validation-error" 
+                    *ngIf="addClientForm.get('city').invalid && (addClientForm.get('city').dirty || addClientForm.get('city').touched)">
+                    City is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="state" class="label col-sm-3 col-form-label">State</label>
+                <div class="col-sm-9">
+                    <input type="state" nbInput fullWidth id="state" placeholder="state" formControlName="state">
+                    <div class="validation-error" 
+                    *ngIf="addClientForm.get('state').invalid && (addClientForm.get('state').dirty || addClientForm.get('state').touched)">
+                    State is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="zip" class="label col-sm-3 col-form-label">Zip</label>
+                <div class="col-sm-9">
+                    <input type="zip" nbInput fullWidth id="zip" placeholder="zip" formControlName="zip">
+                    <div class="validation-error" 
+                    *ngIf="addClientForm.get('zip').invalid && (addClientForm.get('zip').dirty || addClientForm.get('zip').touched)">
+                    Zip is required
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+
+                <nb-checkbox formControlName="bestContactNumber">Is the phone number above the best place to reach you during an emergency?</nb-checkbox>
+
+            </div>
+
+            <div class="form-group row">
+
+                <nb-checkbox formControlName="textUpdates">Can we text you updates (videos, confirming drop off & pick up, etc.)?</nb-checkbox>
+
+            </div>
+
+            <button nbButton [status]="'success'" hero>
+                <i class="fa-solid fa-circle-plus"></i> &nbsp; Add a pet
+            </button>
+
+            <button type="submit" [disabled]="!addClientForm.valid" nbButton [status]="'primary'" hero>Add Client</button>
+
+          </form>
+        </nb-card-body>
+      </nb-card>
+
+    </div>
+  </div>

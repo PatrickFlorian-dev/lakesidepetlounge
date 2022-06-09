@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import * as moment from 'moment';
+
+// TODO: Implement moment
+const curYear = 2022;
 
 @Component({
   selector: 'ngx-footer',
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-      Created with ♥ by <b><a href="https://akveo.page.link/8V2f" target="_blank">Akveo</a></b> 2019
+      <a href="https://patrickflorian.com" target="_blank">Patrick Florian</a> LLC ${curYear}
     </span>
     <div class="socials">
       <a href="#" target="_blank" class="ion ion-social-github"></a>
