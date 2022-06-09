@@ -11,6 +11,11 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
+      path: 'admin',
+      loadChildren: () => import('./adminpages/adminpages.module')
+        .then(m => m.AdminPagesModule),
+    },
+    {
       path: 'dashboard',
       component: ECommerceComponent,
     },
