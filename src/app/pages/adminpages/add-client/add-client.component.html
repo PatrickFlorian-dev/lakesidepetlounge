@@ -114,6 +114,24 @@
             </div>
 
             <hr/>
+            <h6 class="divider">Emergency Contact</h6>
+            <hr/>
+
+            <div class="form-group row">
+                <label for="emergencyContactName" class="label col-sm-3 col-form-label">Emergency Contact Name</label>
+                <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth id="emergencyContactName" placeholder="Emergency Contact Name" formControlName="emergencyContactName">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="emergencyContactNumber" class="label col-sm-3 col-form-label">Emergency Contact Number</label>
+                <div class="col-sm-9">
+                    <input type="text" nbInput fullWidth id="emergencyContactNumber" placeholder="Emergency Contact Number" formControlName="emergencyContactNumber">
+                </div>
+            </div>
+
+            <hr/>
             <h6 class="divider">Pets</h6>
             <hr/>
 
@@ -223,7 +241,7 @@
             
             <div class="form-group row">
 
-                <button type="submit" [disabled]="!addClientForm.valid" nbButton [status]="'primary'" (click)="addClient()" hero><i class="fa-solid fa-circle-plus">
+                <button type="submit" [disabled]="!addClientForm.valid" nbButton [status]="'primary'" (click)="addPet()" hero><i class="fa-solid fa-circle-plus">
                 </i> &nbsp; Add Client</button>
 
             </div>

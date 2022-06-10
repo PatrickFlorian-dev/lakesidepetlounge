@@ -37,6 +37,8 @@ export class AddClientComponent {
         bestContactNumber: new FormControl(''),
         textUpdates: new FormControl(''),
         agreementSignature: new FormControl(''),
+        emergencyContactName: new FormControl(''),
+        emergencyContactNumber: new FormControl(''),
         pets: this.fb.array([]) ,
       })
 
