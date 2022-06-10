@@ -113,25 +113,120 @@
 
             </div>
 
+            <hr/>
+            <h6 class="divider">Pets</h6>
+            <hr/>
+
             <div formArrayName="pets">
                 <div *ngFor="let employee of pets().controls; let petIndex=index">
-                    
-                    <div class="form-group row" [formGroupName]="petIndex">
-                        <label for="pet" class="label col-sm-3 col-form-label">Pet {{ petIndex + 1 }}</label>
-                        <div class="col-sm-9">
-                            <input type="text" nbInput fullWidth id="pet" placeholder="pet" formControlName="petName">
-                            <button nbButton [status]="'danger'" hero (click)="removePet(petIndex)">Remove</button>
+
+                    <div [formGroupName]="petIndex">
+
+                        <div class="form-group row">
+                            <label for="pet" class="label col-sm-3 col-form-label">Pet's Name - Pet # {{ petIndex + 1 }}</label>
+                            <div class="col-sm-9">
+                                <input type="text" nbInput fullWidth id="pet{{ petIndex }}" class="pet-input" placeholder="Pet's Name" formControlName="petName">
+                                <button nbButton [status]="'danger'" hero (click)="removePet(petIndex)" class="remove-pet-btn">Remove this pet</button>
+                            </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="petNickname" class="label col-sm-3 col-form-label">Pet's Nickname</label>
+                            <div class="col-sm-9">
+                                <input type="text" nbInput fullWidth placeholder="Pet's Nickname" formControlName="petNickname">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="petNickname" class="label col-sm-3 col-form-label">Pet's Date Of Birth</label>
+                            <div class="col-sm-9">
+                                <input type="text" nbInput fullWidth placeholder="Pet's DOB" formControlName="petDob" [nbDatepicker]="petdobpicker">
+                                <nb-datepicker #petdobpicker></nb-datepicker>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="petweight" class="label col-sm-3 col-form-label">Pet's Weight</label>
+                            <div class="col-sm-9">
+                                <input type="text" nbInput fullWidth placeholder="Pet's Weight" formControlName="petweight">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="petSex" class="label col-sm-3 col-form-label" formControlName="petSex">Pet's Sex</label>
+                            <nb-select>
+                                <nb-option value="Male">Male</nb-option>
+                                <nb-option value="Female">Female</nb-option>
+                            </nb-select>
+                        </div>
+
+                        <div class="form-group row">
+                            <nb-checkbox formControlName="petNueteredOrSprayed">Neutered/Spayed?</nb-checkbox>
+                        </div>
+
+                        <div class="form-group row">
+                            <nb-checkbox formControlName="petAllergiesOrMedicalCondition">Pet Allergies Or Medical Conditions?</nb-checkbox>
+                        </div>
+
+                        <div class="form-group row">
+                            <nb-checkbox formControlName="petAggresive">Pet Aggresive?</nb-checkbox>
+                        </div>
+
+                        <div class="form-group row">
+                            <nb-checkbox formControlName="petOwnsToysOrBlankets">Pet owns toys or blankets?</nb-checkbox>
+                        </div>
+
+                        <div class="form-group row">
+                            <textarea formControlName="petAllergiesMedicationComments" rows="3" nbInput fullWidth placeholder="Pet Allergies Or Medications Comments"></textarea>
+                        </div>
+
+                        <div class="form-group row">
+                            <textarea formControlName="petFeedingInstructions" rows="3" nbInput fullWidth placeholder="Pet Feeding Instructions"></textarea>
+                        </div>
+
+                        <div class="form-group row">
+                            <textarea formControlName="petGeneralComments" rows="3" nbInput fullWidth placeholder="General Pet / Client Comments"></textarea>
+                        </div>
+
                     </div>
+
+                    <hr/>
 
                 </div>
             </div>
 
-            <button nbButton [status]="'success'" hero (click)="addPet()">
-                <i class="fa-solid fa-circle-plus"></i> &nbsp; Add a pet 
-            </button>
+            <div class="form-group row">
 
-            <button type="submit" [disabled]="!addClientForm.valid" nbButton [status]="'primary'" hero>Add Client</button>
+                <button nbButton [status]="'success'" hero (click)="addPet()"><i class="fa-solid fa-circle-plus"></i> &nbsp; Add a pet </button>
+
+            </div>
+
+            <hr/>
+            <h6 class="divider">Agreement</h6>
+            <hr/>
+
+            <div class="form-group row">
+
+                <signature-pad #signature [options]="signaturePadOptions" (drawStart)="drawStart($event)" (drawEnd)="drawComplete($event)"></signature-pad>
+
+            </div>
+
+            <div class="form-group row">
+
+                <button type="text" nbButton [status]="'danger'" hero (click)="clearSignature()">Clear Signature</button>
+
+            </div>
+
+            <hr/>
+            <h6 class="divider">Submit New Client</h6>
+            <hr/>
+            
+            <div class="form-group row">
+
+                <button type="submit" [disabled]="!addClientForm.valid" nbButton [status]="'primary'" (click)="addClient()" hero><i class="fa-solid fa-circle-plus">
+                </i> &nbsp; Add Client</button>
+
+            </div>
 
           </form>
         </nb-card-body>

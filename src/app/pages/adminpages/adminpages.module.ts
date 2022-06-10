@@ -18,6 +18,7 @@ import { FormsModule as ngFormsModule } from '@angular/forms';
 import { HomepageComponent } from './homepage/homepage.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddClientComponent } from './add-client/add-client.component';
+import { AngularSignaturePadModule } from '@almothafar/angular-signature-pad';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { AddClientComponent } from './add-client/add-client.component';
     ngFormsModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularSignaturePadModule,
   ],
   declarations: [
     AdminPagesComponent,
