@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'ngx-add-client',
@@ -9,7 +9,11 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 export class AddClientComponent {
 
-    addClientForm = new FormGroup({
+    addClientForm: FormGroup;
+   
+    constructor(private fb:FormBuilder) {
+   
+      this.addClientForm=this.fb.group({
         firstName: new FormControl('', Validators.required),
         lastName: new FormControl('', Validators.required),
         phone: new FormControl('', Validators.required),
@@ -21,10 +25,40 @@ export class AddClientComponent {
         zip: new FormControl('', Validators.required),
         bestContactNumber: new FormControl(''),
         textUpdates: new FormControl(''),
-    });
-
+        pets: this.fb.array([]) ,
+      })
+    }
+   
+    pets(): FormArray {
+      return this.addClientForm.get("pets") as FormArray
+    }
+   
+    newPet(): FormGroup {
+      return this.fb.group({
+        petName: '',
+      })
+    }
+   
+    addPet() {
+      this.pets().push(this.newPet());
+    }
+   
+    removePet(petIndex:number) {
+      this.pets().removeAt(petIndex);
+    }
+   
     onSubmit() {
-        console.warn(this.addClientForm.value);
+      console.log(this.addClientForm.value);
     }
 
 }
+
+export class country {
+    id: string;
+    name: string;
+   
+    constructor(id: string, name: string) {
+      this.id = id;
+      this.name = name;
+    }
+  }

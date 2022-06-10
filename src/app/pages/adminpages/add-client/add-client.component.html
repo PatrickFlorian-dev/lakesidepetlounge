@@ -113,7 +113,21 @@
 
             </div>
 
-            <button nbButton [status]="'success'" hero>
+            <div formArrayName="pets">
+                <div *ngFor="let employee of pets().controls; let petIndex=index">
+                    
+                    <div class="form-group row" [formGroupName]="petIndex">
+                        <label for="pet" class="label col-sm-3 col-form-label">Pet {{ petIndex + 1 }}</label>
+                        <div class="col-sm-9">
+                            <input type="text" nbInput fullWidth id="pet" placeholder="pet" formControlName="petName">
+                            <button nbButton [status]="'danger'" hero (click)="removePet(petIndex)">Remove</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <button nbButton [status]="'success'" hero (click)="addPet()">
                 <i class="fa-solid fa-circle-plus"></i> &nbsp; Add a pet 
             </button>
 
